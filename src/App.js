@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import GlobalStyles from "./Styles/GlobalStyles";
+import React from 'react'
+import { ThemeProvider } from "styled-components";
+import { light,dark } from "./Styles/Themes";
+import Navigation from "./Components/Navigation";
+import Home from '../src/Components/Sections/Home'
+import About from '../src/Components/Sections/About'
+import Roadmap from '../src/Components/Sections/Roadmap'
+import Showcase from '../src/Components/Sections/Showcase'
+import Team from '../src/Components/Sections/Team'
+import Faq from '../src/Components/Sections/Faq'
+import Footer from '../src/Components/Sections/Footer'
+import ScrollToTop from "./Components/Sections/ScrollToTop";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <>
+       <GlobalStyles/>
+         <ThemeProvider theme={light}>
+           <Navigation/>
+           <Home/>
+           <About/>
+           <Roadmap/>
+           <Showcase/>
+           <Team/>
+           <Faq/>
+           <Footer/>
+           <ScrollToTop/>
+         </ThemeProvider> 
+     </>
+  
+   
   );
 }
 
